@@ -1,0 +1,18 @@
+<div class="login-form">
+  <h2>התחברות (מדומה - Google בהמשך)</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <label>אימייל</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+
+    <label>תפקיד</label>
+    <select [(ngModel)]="role" name="role">
+      <option value="Support">Support</option>
+      <option value="Admin">Admin</option>
+    </select>
+
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    <button type="submit">התחבר</button>
+  </form>
+</div>

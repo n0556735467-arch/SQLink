@@ -1,0 +1,30 @@
+<h1 style="color:red">DEBUG: {{ ticket?.fullName }}</h1>
+
+<div class="view-ticket-card" *ngIf="ticket">
+  <div class="status-badge" [class]="'status-' + ticket.status.toLowerCase()">
+    {{ ticket.status }}
+  </div>
+
+  <h2>{{ ticket.fullName }}</h2>
+  <p class="meta">{{ ticket.email }}</p>
+
+  <div class="section">
+    <label>תיאור התקלה</label>
+    <p>{{ ticket.description }}</p>
+  </div>
+
+  <div class="section" *ngIf="ticket.imagePath">
+    <label>תמונה</label>
+    <img [src]="'https://localhost:7103' + ticket.imagePath" alt="תמונת התקלה" />
+  </div>
+
+  <div class="section" *ngIf="ticket.resolutionText">
+    <label>פתרון</label>
+    <p>{{ ticket.resolutionText }}</p>
+  </div>
+
+  <div class="dates">
+    <span>נפתח: {{ ticket.createdAt | date:'dd/MM/yyyy HH:mm' }}</span>
+    <span>עודכן: {{ ticket.updatedAt | date:'dd/MM/yyyy HH:mm' }}</span>
+  </div>
+</div>

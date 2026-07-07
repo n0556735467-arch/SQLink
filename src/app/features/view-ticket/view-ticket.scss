@@ -1,0 +1,56 @@
+.view-ticket-card {
+  max-width: 480px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  direction: rtl;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+
+  .status-badge {
+    display: inline-block;
+    padding: 0.3rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+
+    &.status-open { background: #dbeafe; color: #1d4ed8; }
+    &.status-inprogress { background: #fef3c7; color: #b45309; }
+    &.status-resolved { background: #d1fae5; color: #047857; }
+    &.status-closed { background: #f3f4f6; color: #6b7280; }
+  }
+
+  h2 { font-size: 1.35rem; margin: 0.25rem 0; color: #1a1a1a; }
+  .meta { color: #888; font-size: 0.875rem; margin-bottom: 1.5rem; }
+
+  .section {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #666;
+      margin-bottom: 0.4rem;
+    }
+
+    p { margin: 0; line-height: 1.5; color: #333; }
+
+    img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+    }
+  }
+
+  .dates {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: #aaa;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1rem;
+  }
+}

@@ -1,0 +1,21 @@
+<div class="create-ticket-form">
+  <h2>פתיחת טיקט חדש</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <label>שם מלא</label>
+    <input type="text" [(ngModel)]="fullName" name="fullName" required minlength="2" />
+
+    <label>אימייל</label>
+    <input type="email" [(ngModel)]="email" name="email" required />
+
+    <label>תיאור התקלה</label>
+    <textarea [(ngModel)]="description" name="description" required minlength="5"></textarea>
+
+    <label>תמונה (אופציונלי)</label>
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+
+    <button type="submit">שלח</button>
+  </form>
+</div>
